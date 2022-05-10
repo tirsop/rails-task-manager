@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <div class="alert alert-dark" role="alert">
+    <%= @task.details %>
+  </div>
+  <p>This task is completed.</p>
+
+  <%= link_to tasks_path do %>
+    <i class="fas fa-home"></i>
+  <% end %>
+
+  <%= link_to edit_task_path(@task) do %>
+    <i class="fas fa-pen-fancy"></i>
+  <% end %>
+</div>

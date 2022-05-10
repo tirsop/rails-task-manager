@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Edit Task</h1>
+  
+  <%= render 'tasks/form' %>
+
+  <%= link_to task_path(@task), class:'border-top border-3' do %>
+    <i class="fas fa-undo"></i> Back to task
+  <% end %>
+  
+</div>

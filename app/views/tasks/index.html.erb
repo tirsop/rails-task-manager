@@ -1,1 +1,15 @@
-<h1>index</h1>
+<div class="container">
+  <h1>My tasks</h1>
+  <% @tasks.each do |task| %>
+    <div>
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete #{task.title}?" } do %>
+        <i class="fas fa-dumpster-fire"></i>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to new_task_path, class:'border-top border-3' do %>
+    <i class="fas fa-plus"></i> Create a new task
+  <% end %>
+</div>
