@@ -2,6 +2,11 @@
   <h1>My tasks</h1>
   <% @tasks.each do |task| %>
     <div>
+      <% if task.completed %>
+        <i class="fas fa-check-square"></i>
+      <% else %>
+        <i class="fas fa-square"></i>
+      <% end %>
       <%= link_to task.title, task_path(task) %>
       <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete #{task.title}?" } do %>
         <i class="fas fa-dumpster-fire"></i>

@@ -3,6 +3,11 @@
   <div class="alert alert-dark" role="alert">
     <%= @task.details %>
   </div>
+  <% if @task.completed %>
+    <i class="fas fa-check-square"></i>
+  <% else %>
+    <i class="fas fa-square"></i>
+  <% end %>
   <p>This task is completed.</p>
 
   <%= link_to tasks_path do %>
